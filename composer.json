@@ -1,0 +1,82 @@
+{
+  "name": "emreuyguc/structured-mapper",
+  "description": "Structured Mapper is a PHP library that helps you to map your objects, such as entities to DTOs or models to entities, easily.",
+  "type": "library",
+  "keywords": [
+    "emreuyguc",
+    "structured-mapper",
+    "php",
+    "php-mapper",
+    "mapper",
+    "data-mapper",
+    "entity-mapper",
+    "object-mapper",
+    "dto-mapper",
+    "data-transformer",
+    "dto",
+    "mapping",
+    "transformation",
+    "object-to-object"
+  ],
+  "support": {
+    "email": "emreuyguc@gmail.com",
+    "source": "https://github.com/emreuyguc/php-structured-mapper"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/emreuyguc/php-structured-mapper",
+  "authors": [
+    {
+      "name": "Emre Utku Uyguç",
+      "email": "emreuyguc@gmail.com",
+      "homepage": "https://emreuyguc.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "phpstan/phpdoc-parser": "^2.0.0",
+    "symfony/property-access": "^v7.2",
+    "symfony/property-info": "^v7.2",
+    "symfony/expression-language": "^v7.2",
+    "doctrine/collections": "^2.2"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "mockery/mockery": "^1.5",
+    "pestphp/pest": "^3.7",
+    "phpstan/extension-installer": "^1.4.3",
+    "phpstan/phpstan": "^2.1.0",
+    "phpstan/phpstan-deprecation-rules": "^2.0.1",
+    "symfony/var-dumper": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Euu\\StructuredMapper\\": "src/",
+      "Euu\\StructuredMapper\\Example\\": "example/"
+    },
+    "files": [
+      "src/Helper/Functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Euu\\StructuredMapper\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "analyze": "@php vendor/bin/phpstan analyse src/",
+    "format": "@php vendor/bin/php-cs-fixer fix src/",
+    "format-dry-run": "@php vendor/bin/php-cs-fixer fix src/ --dry-run",
+    "test": "@php vendor/bin/pest"
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "config": {
+    "optimize-autoloader": true,
+    "allow-plugins": true,
+    "sort-packages": true,
+    "preferred-install": {
+      "*": "dist"
+    }
+  }
+}

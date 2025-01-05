@@ -1,0 +1,31 @@
+# Composer Related
+composer.lock
+/vendor
+
+# Caches
+.phpunit.cache
+.phpunit.result.cache
+/build
+
+# Editors
+/.idea
+/.vscode
+/.fleet
+
+# Misc
+phpunit.xml
+testbench.yaml
+/docs
+/coverage
+
+# Local
+TODO.md
+
+###> friendsofphp/php-cs-fixer ###
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
