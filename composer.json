@@ -37,15 +37,18 @@
     "doctrine/collections": "^2.2",
     "symfony/expression-language": "^v7.2",
     "symfony/property-access": "^v7.2",
-    "symfony/property-info": "^v7.2"
+    "symfony/property-info": "^v7.2",
+    "symfony/type-info": "^v7.2"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.0",
     "mockery/mockery": "^1.5",
     "pestphp/pest": "^3.7",
-    "phpstan/extension-installer": "^1.4.3",
-    "phpstan/phpstan": "^2.1.0",
-    "phpstan/phpstan-deprecation-rules": "^2.0.1",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^2.1",
+    "phpstan/phpstan-deprecation-rules": "^2.0",
+    "phpunit/phpunit": "^11.5",
+    "shipmonk/composer-dependency-analyser": "^1.8",
     "symfony/var-dumper": "^7.2"
   },
   "autoload": {
@@ -63,6 +66,7 @@
     }
   },
   "scripts": {
+    "analyze-composer": "@php vendor/bin/composer-dependency-analyser",
     "analyze": "@php vendor/bin/phpstan analyse src/",
     "format": "@php vendor/bin/php-cs-fixer fix src/",
     "format-dry-run": "@php vendor/bin/php-cs-fixer fix src/ --dry-run",
