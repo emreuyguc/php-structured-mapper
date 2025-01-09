@@ -19,8 +19,8 @@ use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\ResolveEntityTr
 use Euu\StructuredMapper\ValueTransformer\EnumTransform\EnumTransformer;
 use Euu\StructuredMapper\ValueTransformer\ExplodeTransform\ExplodeTransformer;
 use Euu\StructuredMapper\ValueTransformer\ImplodeTransform\ImplodeTransformer;
-use Euu\StructuredMapper\ValueTransformer\WithMapperTransform\WithMapperTransformer;
 use Euu\StructuredMapper\ValueTransformer\ValueTransformerRegistry;
+use Euu\StructuredMapper\ValueTransformer\WithMapperTransform\WithMapperTransformer;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractor;

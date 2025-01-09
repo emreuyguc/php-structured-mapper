@@ -1,8 +1,8 @@
 # Euu Php Structured Mapper
 
-![PHP Version](https://img.shields.io/badge/php-%3E%3D8.0-blue)
+![PHP Version](https://img.shields.io/badge/php-%3E%3D8.2-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Author](https://img.shields.io/badge/author-euu-orange)
+![Author](https://img.shields.io/badge/author-emreuyguc-orange)
 
 Euu Structured Mapper is a simple and experimental data transformation library for PHP.
 

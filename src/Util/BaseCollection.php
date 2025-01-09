@@ -3,6 +3,7 @@
 namespace Euu\StructuredMapper\Util;
 
 use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @template TKey of array-key
  * @template TValue
