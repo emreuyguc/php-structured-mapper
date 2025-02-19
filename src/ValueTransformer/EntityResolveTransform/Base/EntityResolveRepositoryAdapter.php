@@ -2,7 +2,7 @@
 
 namespace Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\Base;
 
-interface EntityRepositoryAdapter
+interface EntityResolveRepositoryAdapter
 {
     public function getRepository(string $entityName): ?object;
 }

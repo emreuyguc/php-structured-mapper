@@ -5,17 +5,17 @@ namespace Euu\StructuredMapper\ValueTransformer\EntityResolveTransform;
 use Euu\StructuredMapper\ValueTransformer\Base\Exception\ValueTransformationException;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerInterface;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerMeta;
-use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\Base\EntityRepositoryAdapter;
+use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\Base\EntityResolveRepositoryAdapter;
 
-class ResolveEntityTransformer implements ValueTransformerInterface
+class EntityResolveTransformer implements ValueTransformerInterface
 {
-    public function __construct(private readonly EntityRepositoryAdapter $entityRepositoryAdapter)
+    public function __construct(private readonly EntityResolveRepositoryAdapter $entityRepositoryAdapter)
     {
     }
 
-    public function transform(ResolveEntity|ValueTransformerMeta $transformerMeta, mixed $value, array &$mappingContext = []): mixed
+    public function transform(EntityResolve|ValueTransformerMeta $transformerMeta, mixed $value, array &$mappingContext = []): mixed
     {
-        if (!$transformerMeta instanceof ResolveEntity) {
+        if (!$transformerMeta instanceof EntityResolve) {
             throw new \InvalidArgumentException('Expected transformerMeta to be of type ResolveEntity.');
         }
 

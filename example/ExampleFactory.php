@@ -14,8 +14,8 @@ use Euu\StructuredMapper\StructureReader\LazyRegisteredStructure\LazyRegisteredS
 use Euu\StructuredMapper\StructureReader\LazyRegisteredStructure\StructureReaderRegistry;
 use Euu\StructuredMapper\StructureReader\LazyRegisteredStructure\StructureRegistry;
 use Euu\StructuredMapper\ValueTransformer\ArrayItemTransform\ArrayItemTransformer;
-use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\Base\EntityRepositoryAdapter;
-use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\ResolveEntityTransformer;
+use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\Base\EntityResolveRepositoryAdapter;
+use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\EntityResolveTransformer;
 use Euu\StructuredMapper\ValueTransformer\EnumTransform\EnumTransformer;
 use Euu\StructuredMapper\ValueTransformer\ExplodeTransform\ExplodeTransformer;
 use Euu\StructuredMapper\ValueTransformer\ImplodeTransform\ImplodeTransformer;
@@ -50,9 +50,9 @@ class ExampleFactory
 		);
 	}
 
-	public static function initFakeEntityManager(): EntityRepositoryAdapter
+	public static function initFakeEntityManager(): EntityResolveRepositoryAdapter
 	{
-		return new class implements EntityRepositoryAdapter {
+		return new class implements EntityResolveRepositoryAdapter {
 			public function getRepository(string $entityName): ?object
 			{
 				$ownerRepository = new class {
@@ -118,7 +118,7 @@ class ExampleFactory
 			new ImplodeTransformer(),
 			new ArrayItemTransformer(),
 			new EnumTransformer(),
-			new ResolveEntityTransformer(self::initFakeEntityManager()),
+			new EntityResolveTransformer(self::initFakeEntityManager()),
 		]);
 	}
 

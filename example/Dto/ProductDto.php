@@ -13,7 +13,7 @@ use Euu\StructuredMapper\Struct\Attribute\OnMapTo;
 use Euu\StructuredMapper\Struct\Mapping;
 use Euu\StructuredMapper\ValueTransformer\ArrayItemTransform\ArrayItemTransform;
 use Euu\StructuredMapper\ValueTransformer\ArrayItemTransform\ArrayItemTransformer;
-use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\ResolveEntity;
+use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\EntityResolve;
 use Euu\StructuredMapper\ValueTransformer\EnumTransform\EnumTransform;
 use Euu\StructuredMapper\ValueTransformer\ExplodeTransform\ExplodeTransform;
 use Euu\StructuredMapper\ValueTransformer\ImplodeTransform\ImplodeTransform;
@@ -76,7 +76,7 @@ class ProductDto
         ProductEntity::class,
         targetPath: 'subCategories',
         transformerMeta: new ArrayItemTransform(
-            itemTransformerMeta: new ResolveEntity(SubCategoryEntity::class),
+            itemTransformerMeta: new EntityResolve(SubCategoryEntity::class),
             transformerContext: [
                 ArrayItemTransformer::USE_ADD_METHOD => 'addSubCategory',
                 ArrayItemTransformer::CLEAR_METHOD => 'subCategories.clear()',
