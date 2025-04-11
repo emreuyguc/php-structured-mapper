@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\ValueTransformer\ImplodeTransform;
 
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerMeta;

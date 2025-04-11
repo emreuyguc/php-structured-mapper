@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\Struct;
 
 use Euu\StructuredMapper\Mapper\ObjectMapper\ObjectMapper;

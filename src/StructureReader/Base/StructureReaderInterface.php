@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\StructureReader\Base;
 
 use Euu\StructuredMapper\Struct\MapStruct;

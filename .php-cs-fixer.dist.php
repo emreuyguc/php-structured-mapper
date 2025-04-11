@@ -28,7 +28,7 @@ return $config->setRules([
     // PHP 8.2 ve üzeri modern syntax desteği
     //'modernize_strpos' => true, // strpos() yerine str_contains() kullanımı
     'nullable_type_declaration_for_default_null_value' => true, // Varsayılan değeri null olan tiplerde nullable yap
-    //'declare_strict_types' => true, // Tüm dosyalar için "declare(strict_types=1);" ekle
+    'declare_strict_types' => true, // Tüm dosyalar için "declare(strict_types=1);" ekle
     'class_attributes_separation' => ['elements' => ['method' => 'one', 'property' => 'one']], // Sınıf elemanları arasında boşluk bırak
 
     // PHP 8 özelliklerini etkin kullan
@@ -46,7 +46,7 @@ return $config->setRules([
     'phpdoc_separation' => true, // PHPDoc bölümler arasında boşluk bırak
 
     // Modern dönüşümler
-    //'modernize_types_casting' => true, // Eski tip dönüşümleri modernleştir (örneğin, `(int)` yerine `(integer)`)
+    'modernize_types_casting' => true, // Eski tip dönüşümleri modernleştir (örneğin, `(int)` yerine `(integer)`)
     'ternary_to_null_coalescing' => true, // Ternary operatör yerine null coalescing operatörü
     'short_scalar_cast' => true, // Kısa tip dönüşümlerini kullan
 
@@ -58,4 +58,10 @@ return $config->setRules([
     'single_line_throw' => false, // throw ifadelerini tek satırda değilse ayır
     'new_with_braces' => true, // New anahtar kelimesiyle parantez kullanımını zorunlu yap
     'no_superfluous_phpdoc_tags' => true, // Gereksiz PHPDoc etiketlerini kaldır
+
+    'no_blank_lines_after_phpdoc' => true,
+    'global_namespace_import' => ['import_classes' => true], //global namespaceleri use yapar
+    'explicit_string_variable' => true, //"Hello $name" yerine "Hello {$name}" şeklinde yazımı zorunlu kılar.
+    'no_unreachable_default_argument_value' => true //null olan fakat nullable olmayan argument tiplerini fixler
+
 ]);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\Mapper\ObjectMapper;
 
 use Euu\StructuredMapper\Exception\InvalidArgumentException;
@@ -172,7 +174,7 @@ class ObjectMapper implements MapperInterface, StructuredMapperAwareInterface
                         throw new LogicException(
                             (isset($transformerInstance) ? 'Transformed ' : 'Source class ') .
                             '[' . (is_array($sourcePath) ? implode(',', $sourcePath) : $sourcePath) .
-                            "] property type($targetValueType) has not equal Target class [$targetPath] property type($targetType)"
+                            "] property type({$targetValueType}) has not equal Target class [{$targetPath}] property type({$targetType})"
                         );
                     }
                 }
@@ -204,7 +206,7 @@ class ObjectMapper implements MapperInterface, StructuredMapperAwareInterface
                         'sourceInstance' => $sourceObject,
                     ]);
 
-                    if (boolval($evaluation)) {
+                    if ((bool) $evaluation) {
                         $this->expressionLanguage->evaluate(
                             'targetInstance.' . $arrayClearMethod,
                             [

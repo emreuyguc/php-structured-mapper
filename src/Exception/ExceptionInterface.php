@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\Exception;
 
-interface ExceptionInterface extends \Throwable
+use Throwable;
+
+interface ExceptionInterface extends Throwable
 {
 }

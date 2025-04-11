@@ -2,5 +2,7 @@ parameters:
     level: 5
     paths:
         - src/
+        - tests/
     tmpDir: build/phpstan
     editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
+    treatPhpDocTypesAsCertain: false

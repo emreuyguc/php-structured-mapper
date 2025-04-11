@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper;
 
 use Euu\StructuredMapper\Mapper\Base\Exception\MapperNotFoundException;
