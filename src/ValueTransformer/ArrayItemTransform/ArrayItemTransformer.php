@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\ValueTransformer\ArrayItemTransform;
 
 use Euu\StructuredMapper\Mapper\ObjectMapper\ObjectMapper;
@@ -8,6 +10,7 @@ use Euu\StructuredMapper\ValueTransformer\Base\TransformerAware;
 use Euu\StructuredMapper\ValueTransformer\Base\TransformerAwareInterface;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerInterface;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerMeta;
+use InvalidArgumentException;
 
 class ArrayItemTransformer implements ValueTransformerInterface, TransformerAwareInterface
 {
@@ -20,7 +23,7 @@ class ArrayItemTransformer implements ValueTransformerInterface, TransformerAwar
     public function transform(ValueTransformerMeta|ArrayItemTransform $transformerMeta, mixed $value, array &$mappingContext = []): array
     {
         if (!$transformerMeta instanceof ArrayItemTransform) {
-            throw new \InvalidArgumentException('Expected transformerMeta to be of type ArrayItemTransform.');
+            throw new InvalidArgumentException('Expected transformerMeta to be of type ArrayItemTransform.');
         }
 
         if (!is_array($value)) {

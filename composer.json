@@ -69,8 +69,8 @@
   "scripts": {
     "analyze-composer": "@php vendor/bin/composer-dependency-analyser",
     "analyze": "@php vendor/bin/phpstan analyse src/",
-    "format": "@php vendor/bin/php-cs-fixer fix src/",
-    "format-dry-run": "@php vendor/bin/php-cs-fixer fix src/ --dry-run",
+    "format": "@php vendor/bin/php-cs-fixer fix src/ --allow-risky=yes",
+    "format-dry-run": "@php vendor/bin/php-cs-fixer fix src/ --dry-run --allow-risky=yes",
     "test": "@php vendor/bin/pest"
   },
   "prefer-stable": true,

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\StructureReader\AttributeStructure;
 
 use Euu\StructuredMapper\Exception\InvalidArgumentException;
@@ -25,7 +27,7 @@ class AttributeStructureReader implements StructureReaderInterface
         $mapFrom = $this->getMapFrom($sourceClass, $targetClass);
         if ($mapTo && $mapFrom) {
             if ($mapTo->mapper != $mapFrom->mapper) {
-                throw new InvalidArgumentException("$sourceClass and $targetClass has MapTo and MapFrom structure but they dont have same mapper property");
+                throw new InvalidArgumentException("{$sourceClass} and {$targetClass} has MapTo and MapFrom structure but they dont have same mapper property");
             }
         }
 

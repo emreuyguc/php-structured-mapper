@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\ValueTransformer\EntityResolveTransform;
 
 use Euu\StructuredMapper\ValueTransformer\Base\Exception\ValueTransformationException;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerInterface;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerMeta;
 use Euu\StructuredMapper\ValueTransformer\EntityResolveTransform\Base\EntityResolveRepositoryAdapter;
+use InvalidArgumentException;
 
 class EntityResolveTransformer implements ValueTransformerInterface
 {
@@ -16,7 +19,7 @@ class EntityResolveTransformer implements ValueTransformerInterface
     public function transform(EntityResolve|ValueTransformerMeta $transformerMeta, mixed $value, array &$mappingContext = []): mixed
     {
         if (!$transformerMeta instanceof EntityResolve) {
-            throw new \InvalidArgumentException('Expected transformerMeta to be of type ResolveEntity.');
+            throw new InvalidArgumentException('Expected transformerMeta to be of type ResolveEntity.');
         }
 
         $repository = $this->entityRepositoryAdapter->getRepository($transformerMeta->entity);

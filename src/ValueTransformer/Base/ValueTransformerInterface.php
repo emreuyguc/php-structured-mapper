@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\ValueTransformer\Base;
 
 interface ValueTransformerInterface

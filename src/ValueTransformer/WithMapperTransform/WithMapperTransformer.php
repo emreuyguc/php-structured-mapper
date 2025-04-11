@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Euu\StructuredMapper\ValueTransformer\WithMapperTransform;
 
 use Euu\StructuredMapper\Mapper\Base\StructuredMapperAware;
 use Euu\StructuredMapper\Mapper\Base\StructuredMapperAwareInterface;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerInterface;
 use Euu\StructuredMapper\ValueTransformer\Base\ValueTransformerMeta;
+use InvalidArgumentException;
 
 class WithMapperTransformer implements ValueTransformerInterface, StructuredMapperAwareInterface
 {
@@ -14,7 +17,7 @@ class WithMapperTransformer implements ValueTransformerInterface, StructuredMapp
     public function transform(ValueTransformerMeta|WithMapper $transformerMeta, mixed $value, array &$mappingContext = []): mixed
     {
         if (!$transformerMeta instanceof WithMapper) {
-            throw new \InvalidArgumentException('Expected transformerMeta to be of type WithMapper.');
+            throw new InvalidArgumentException('Expected transformerMeta to be of type WithMapper.');
         }
 
         return $this->performMapping($value, $transformerMeta->targetClass, $mappingContext);
