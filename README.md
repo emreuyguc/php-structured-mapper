@@ -1,10 +1,10 @@
-# Euu Php Structured Mapper
+# Php Structured Mapper
 
 ![PHP Version](https://img.shields.io/badge/php-%3E%3D8.2-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Author](https://img.shields.io/badge/author-emreuyguc-orange)
 
-Euu Structured Mapper is a simple and experimental data transformation library for PHP.
+Structured Mapper is a simple and experimental data transformation library for PHP.
 
 This project aims to simplify defining transformation rules using attributes and performing data type conversions. It also provides an extremely simple structure for ease of use.
 
@@ -23,7 +23,7 @@ This project aims to simplify defining transformation rules using attributes and
 
 ## Installation
 
-Add Euu Structured Mapper to your project using Composer:
+Add Structured Mapper to your project using Composer:
 
 ```bash
 composer require emreuyguc/structured-mapper
